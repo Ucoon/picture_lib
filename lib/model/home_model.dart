@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:picture_lib/model/entity/result_entity.dart';
+import 'package:quiver/strings.dart';
 
 ///首页信息处理类
 class HomeModel extends ChangeNotifier {
@@ -18,7 +19,7 @@ class HomeModel extends ChangeNotifier {
   saveHomePictureList(String content) {
     _resultList.clear();
     _allPictureList?.forEach((element) {
-      if (element.imageName.contains(content)) {
+      if (equalsIgnoreCase(content, element.imageName)) {
         _resultList.add(element);
       }
     });
@@ -27,6 +28,11 @@ class HomeModel extends ChangeNotifier {
 
   clearHomePictureList() {
     _resultList.clear();
+    notifyListeners();
+  }
+
+  clearAllPictureList() {
+    _allPictureList.clear();
     notifyListeners();
   }
 }

@@ -42,6 +42,8 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
   @override
   void dispose() {
     _contentControl.dispose();
+    _homeViewModel.clearHomePictureList();
+    _homeViewModel.clearAllPictureList();
     super.dispose();
   }
 
@@ -94,40 +96,43 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
                     ),
                   ),
                 ),
+                Container(
+                  width: 200,
+                  height: 29,
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.only(top: 21),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: MyColors.grey_border_color, width: 1),
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'SUBMIT TEXT',
+                      hintStyle: TextStyle(
+                        fontSize: 14,
+                        color: MyColors.grey_font_color,
+                      ),
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
                 GestureDetector(
                   onTap: _getPictures,
                   child: Container(
                     width: 200,
                     height: 29,
-                    alignment: Alignment.center,
                     margin: EdgeInsets.only(top: 21),
+                    alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
                       border: Border.all(color: MyColors.red_border_color, width: 1),
                     ),
                     child: Text(
-                      'SUBMIT TEXT',
+                      'GENERATE MONUMENT',
                       style: TextStyle(
                         fontSize: 14,
                         color: MyColors.red_font_color,
                       ),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 200,
-                  height: 29,
-                  margin: EdgeInsets.only(top: 21),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    border: Border.all(color: MyColors.red_border_color, width: 1),
-                  ),
-                  child: Text(
-                    'GENERATE MONUMENT',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: MyColors.red_font_color,
                     ),
                   ),
                 ),

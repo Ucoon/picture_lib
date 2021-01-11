@@ -30,4 +30,11 @@ class HomeViewModel extends ViewStateModel {
     setIdle();
     return homeModel?.resultList?.length ?? 0;
   }
+
+  Future<int> clearAllPictureList() async {
+    setBusy();
+    homeModel.clearAllPictureList();
+    setIdle();
+    return 0;
+  }
 }
