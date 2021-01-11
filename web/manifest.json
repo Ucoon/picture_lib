@@ -1,6 +1,6 @@
 {
-    "name": "picture_lib",
-    "short_name": "picture_lib",
+    "name": "图库平台",
+    "short_name": "图库平台",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
