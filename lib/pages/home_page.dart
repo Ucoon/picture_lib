@@ -26,7 +26,12 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
       return;
     }
     EasyLoading.show(status: "Loading...");
-    _homeViewModel.getPictures(content).then((value) => EasyLoading.dismiss());
+    _homeViewModel.getPictures().then((value) {
+      Future.delayed(Duration(milliseconds: 500), () {
+        _contentControl.clear();
+        EasyLoading.dismiss();
+      });
+    });
   }
 
   @override
@@ -58,7 +63,8 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
             margin: EdgeInsets.only(left: 25, right: 25),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.41,
-            child: Image.asset(ImageHelper.getImageUrl('home_banner_bg', 'gif')),
+            child:
+                Image.asset(ImageHelper.getImageUrl('home_banner_bg', 'gif')),
           ),
           Container(
             width: 700,
@@ -79,7 +85,8 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
                   alignment: Alignment.topLeft,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    border: Border.all(color: MyColors.grey_border_color, width: 1),
+                    border:
+                        Border.all(color: MyColors.grey_border_color, width: 1),
                   ),
                   child: TextField(
                     controller: _contentControl,
@@ -96,26 +103,26 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
                     ),
                   ),
                 ),
-                Container(
-                  width: 200,
-                  height: 29,
-                  alignment: Alignment.topLeft,
-                  margin: EdgeInsets.only(top: 21),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: MyColors.grey_border_color, width: 1),
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'SUBMIT TEXT',
-                      hintStyle: TextStyle(
-                        fontSize: 14,
-                        color: MyColors.grey_font_color,
-                      ),
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
+                // Container(
+                //   width: 200,
+                //   height: 29,
+                //   alignment: Alignment.topLeft,
+                //   margin: EdgeInsets.only(top: 21),
+                //   decoration: BoxDecoration(
+                //     color: Colors.white,
+                //     border: Border.all(color: MyColors.grey_border_color, width: 1),
+                //   ),
+                //   child: TextField(
+                //     decoration: InputDecoration(
+                //       hintText: 'SUBMIT TEXT',
+                //       hintStyle: TextStyle(
+                //         fontSize: 14,
+                //         color: MyColors.grey_font_color,
+                //       ),
+                //       border: InputBorder.none,
+                //     ),
+                //   ),
+                // ),
                 GestureDetector(
                   onTap: _getPictures,
                   child: Container(
@@ -125,7 +132,8 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      border: Border.all(color: MyColors.red_border_color, width: 1),
+                      border: Border.all(
+                          color: MyColors.red_border_color, width: 1),
                     ),
                     child: Text(
                       'GENERATE MONUMENT',
@@ -169,7 +177,9 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
                   return Container(
                     width: 200,
                     height: 206,
-                    child: ImageHelper.getNetworkImage(data.item2[index].imageUrl, 'home_result_place_holder_icon'),
+                    child: ImageHelper.getNetworkImage(
+                        data.item2[index].imageUrl,
+                        'home_result_place_holder_icon'),
                   );
                 },
               );

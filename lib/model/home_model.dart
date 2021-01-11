@@ -1,6 +1,6 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:picture_lib/model/entity/result_entity.dart';
-import 'package:quiver/strings.dart';
 
 ///首页信息处理类
 class HomeModel extends ChangeNotifier {
@@ -16,13 +16,11 @@ class HomeModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  saveHomePictureList(String content) {
+  saveHomePictureList() {
     _resultList.clear();
-    _allPictureList?.forEach((element) {
-      if (equalsIgnoreCase(content, element.imageName)) {
-        _resultList.add(element);
-      }
-    });
+    int random = Random().nextInt(_allPictureList.length);
+    _resultList.add(_allPictureList[random]);
+    _allPictureList.removeAt(random);
     notifyListeners();
   }
 

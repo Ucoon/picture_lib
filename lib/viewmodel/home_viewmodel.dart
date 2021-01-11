@@ -17,9 +17,9 @@ class HomeViewModel extends ViewStateModel {
     return resultEntity?.results?.length ?? 0;
   }
 
-  Future<int> getPictures(String content) async {
+  Future<int> getPictures() async {
     setBusy();
-    homeModel.saveHomePictureList(content);
+    homeModel.saveHomePictureList();
     setIdle();
     return homeModel?.resultList?.length ?? 0;
   }
