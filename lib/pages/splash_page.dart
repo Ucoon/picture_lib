@@ -10,8 +10,7 @@ class SplashPage extends BasePageStatefulWidget {
 }
 
 class _SplashPageState extends BasePageStatefulWidgetState<SplashPage> {
-
-  _gotoHomePage(){
+  _gotoHomePage() {
     FluroPlusNavigate.goto(context, Routers.home);
   }
 
@@ -25,10 +24,11 @@ class _SplashPageState extends BasePageStatefulWidgetState<SplashPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            width: MediaQuery.of(context).size.width,
+            width: MediaQuery.of(context).size.width * 0.96,
             height: MediaQuery.of(context).size.height * 0.8,
-            padding: EdgeInsets.only(left: 25, right: 25),
-            child: ImageHelper.getNetworkImage('http://ucoon.tech/PictureLib/splash_bg.jpg', 'splash_bg', suffix: 'jpg'),
+            child: ImageHelper.getNetworkImage(
+                'http://ucoon.tech/PictureLib/splash_bg.jpg', 'splash_bg',
+                suffix: 'jpg'),
           ),
           Row(
             mainAxisSize: MainAxisSize.max,

@@ -36,7 +36,7 @@ class ImageHelper {
 
   static Widget getNetworkImage(String url, String placeholderIcon, {double width, double height, String suffix : 'png'}){
     return isBlank(url) ? getIconPng(placeholderIcon) : FadeInImage.assetNetwork(
-      fit: BoxFit.fill,
+      fit: BoxFit.contain,
       width: width,
       height: height,
       placeholder: ImageHelper.getImageUrl(placeholderIcon, suffix),

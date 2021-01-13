@@ -27,7 +27,7 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
     }
     EasyLoading.show(status: "Loading...");
     _homeViewModel.getPictures().then((value) {
-      Future.delayed(Duration(seconds: 3), () {
+      Future.delayed(Duration(seconds: 2), () {
         _contentControl.clear();
         EasyLoading.dismiss();
       });
