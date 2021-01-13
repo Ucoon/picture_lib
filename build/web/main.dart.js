@@ -906,7 +906,7 @@ case 1:return 4
 case 2:return 2
 default:return C.f.KY(1,a)}},
 ph:function(a){var s=J.ad3(a)
-return P.cB(C.e.du((a-s)*1000),s)},
+return P.cB(C.e.du((a-s)*1000),s,0)},
 alD:function(a,b){var s=b.$0()
 return s},
 atP:function(){if($.bq().cy==null)return
@@ -5672,7 +5672,7 @@ if(a>=10)return"0"+a
 return"00"+a},
 im:function(a){if(a>=10)return""+a
 return"0"+a},
-cB:function(a,b){return new P.au(1000*b+a)},
+cB:function(a,b,c){return new P.au(1e6*c+1000*b+a)},
 lj:function(a){if(typeof a=="number"||H.hm(a)||null==a)return J.c6(a)
 if(typeof a=="string")return JSON.stringify(a)
 return P.aph(a)},
@@ -17827,7 +17827,7 @@ al4:function(a,b){var s=H.a(a.split("\n"),t.s)
 $.QI().I(0,s)
 if(!$.aeY)D.ake()},
 ake:function(){var s,r,q,p=$.aeY=!1,o=$.afP()
-if(P.cB(o.gZv(),0).a>1e6){o.dS(0)
+if(P.cB(o.gZv(),0,0).a>1e6){o.dS(0)
 s=o.b
 o.a=s==null?$.Hh.$0():s
 $.Qn=0}while(!0){if($.Qn<12288){o=$.QI()
@@ -19461,7 +19461,7 @@ s=C.e.du(1000*a)
 H.atM()
 r=$.bq()
 q=r.x
-if(q!=null){p=P.cB(s,0)
+if(q!=null){p=P.cB(s,0,0)
 H.QB(q,r.y,p,t.ya)}q=r.z
 if(q!=null)H.QA(q,r.Q)},
 $S:250}
@@ -19488,9 +19488,9 @@ r=a.a
 q=s.a
 if(r<q){p.va()
 p.c=a
-return}if(p.b==null)p.b=P.cw(P.cB(0,r-q),p.gwP())
+return}if(p.b==null)p.b=P.cw(P.cB(0,r-q,0),p.gwP())
 else if(p.c.a>r){p.va()
-p.b=P.cw(P.cB(0,r-q),p.gwP())}p.c=a},
+p.b=P.cw(P.cB(0,r-q,0),p.gwP())}p.c=a},
 va:function(){var s=this.b
 if(s!=null)s.b0(0)
 this.b=null},
@@ -19499,7 +19499,7 @@ p.toString
 s=q.a
 p=p.a
 if(s>=p){r.b=null
-r.Y5()}else r.b=P.cw(P.cB(0,p-s),r.gwP())},
+r.Y5()}else r.b=P.cw(P.cB(0,p-s,0),r.gwP())},
 Y5:function(){return this.gY4().$0()}}
 H.R8.prototype={
 gPo:function(){var s=new H.dq(new W.mB(window.document.querySelectorAll("meta"),t.jG),t.z8).lH(0,new H.R9(),new H.Ra())
@@ -25648,7 +25648,7 @@ $S:105}
 H.a8D.prototype={
 $0:function(){var s=this,r=s.a
 if(C.e.b8(r.offsetWidth)!==s.b){C.zC.cf(r)
-s.c.eg(0)}else if(P.cB(0,Date.now()-s.d.$0().a).a>2e6){s.c.eg(0)
+s.c.eg(0)}else if(P.cB(0,Date.now()-s.d.$0().a,0).a>2e6){s.c.eg(0)
 throw H.b(P.ce("Timed out trying to load font: "+H.c(s.e)))}else P.cw(C.nZ,s)},
 $C:"$0",
 $R:0,
@@ -33542,7 +33542,7 @@ P.JN.prototype={
 i:function(a){return H.C(this).i(0)+"[window: null, geometry: "+C.b1.i(0)+"]"}}
 P.iv.prototype={
 i:function(a){var s=this.a
-return H.C(this).i(0)+"(buildDuration: "+(H.c((P.cB(s[2],0).a-P.cB(s[1],0).a)*0.001)+"ms")+", rasterDuration: "+(H.c((P.cB(s[4],0).a-P.cB(s[3],0).a)*0.001)+"ms")+", vsyncOverhead: "+(H.c((P.cB(s[1],0).a-P.cB(s[0],0).a)*0.001)+"ms")+", totalSpan: "+(H.c((P.cB(s[4],0).a-P.cB(s[0],0).a)*0.001)+"ms")+")"}}
+return H.C(this).i(0)+"(buildDuration: "+(H.c((P.cB(s[2],0,0).a-P.cB(s[1],0,0).a)*0.001)+"ms")+", rasterDuration: "+(H.c((P.cB(s[4],0,0).a-P.cB(s[3],0,0).a)*0.001)+"ms")+", vsyncOverhead: "+(H.c((P.cB(s[1],0,0).a-P.cB(s[0],0,0).a)*0.001)+"ms")+", totalSpan: "+(H.c((P.cB(s[4],0,0).a-P.cB(s[0],0,0).a)*0.001)+"ms")+")"}}
 P.mY.prototype={
 i:function(a){return this.b}}
 P.hF.prototype={
@@ -34626,7 +34626,7 @@ s=j>0?3:5
 break
 case 3:p=7
 s=10
-return P.ao(l.a.a2C(0,P.cB(0,j)),$async$mu)
+return P.ao(l.a.a2C(0,P.cB(0,j,0)),$async$mu)
 case 10:p=2
 s=9
 break
@@ -35565,13 +35565,13 @@ HC:function(a){var s,r,q=this,p={}
 if(Math.abs(a)>=1?a<=0:q.a.gbD()>0.5){s=q.a
 r=P.a3(800,0,s.gbD())
 r.toString
-r=P.cB(0,Math.min(C.e.em(r),300))
+r=P.cB(0,Math.min(C.e.em(r),300),0)
 s.ch=C.b3
 s.l0(1,C.rR,r)}else{q.b.eq(0)
 s=q.a
 if(s.glP()){r=P.a3(0,800,s.gbD())
 r.toString
-r=P.cB(0,C.e.em(r))
+r=P.cB(0,C.e.em(r),0)
 s.ch=C.n4
 s.l0(0,C.rR,r)}}if(s.glP()){p.a=null
 p.b=!1
@@ -37747,7 +37747,7 @@ return o}}
 U.rV.prototype={
 gqG:function(){return this.fy?this.fx:H.h(H.K("_radiusController"))},
 Yz:function(a){var s=C.O.em(this.cx/1),r=this.gqG()
-r.e=P.cB(0,s)
+r.e=P.cB(0,s,0)
 r.en(0)
 this.k1.en(0)},
 b0:function(a){var s=this.k1
@@ -47547,7 +47547,7 @@ a2t:function(){var s=this
 s.id$=s.BE(s.k1$)
 s.go$=null},
 BE:function(a){var s=this.go$,r=s==null?C.L:new P.au(a.a-s.a)
-return P.cB(C.O.b8(r.a/$.akS)+this.id$.a,0)},
+return P.cB(C.O.b8(r.a/$.akS)+this.id$.a,0,0)},
 RV:function(a){if(this.fy$){this.r1$=!0
 return}this.I_(a)},
 Se:function(){if(this.r1$){this.r1$=!1
@@ -54918,7 +54918,7 @@ r=n.z
 s=n.gne()
 r.a=s.b.am(0,s.a)
 r.b=Math.min(0.025+75e-8*l*l,1)
-n.ghE().e=P.cB(0,C.O.b8(0.15+l*0.02))
+n.ghE().e=P.cB(0,C.O.b8(0.15+l*0.02),0)
 n.ghE().lI(0,0)
 n.dy=0.5
 n.a=C.Bd}else{s=a.d
@@ -60326,7 +60326,7 @@ r=T.qN(H.a([k,M.d8(C.H,T.qN(H.a([q,j,D.rH(l,M.d8(C.H,L.ky("GENERATE MONUMENT",l,
 return new E.IE(!0,r,l)},
 Py:function(){return T.are(new X.a7p(),new X.a7q(),t.vb,t.FD)}}
 X.a7s.prototype={
-$1:function(a){P.ahm(P.cB(0,500),new X.a7r(this.a),t.P)},
+$1:function(a){P.ahm(P.cB(0,0,30),new X.a7r(this.a),t.P)},
 $S:402}
 X.a7r.prototype={
 $0:function(){var s=this.a.r
@@ -60373,7 +60373,7 @@ s.a0Y(q,r,!1,!1,C.B0)},
 GQ:function(){var s,r=null,q=t.w,p=this.c.a9(q).f
 q=this.c.a9(q).f
 s=t._
-return D.rH(r,T.qN(H.a([M.d8(r,U.Xw(C.H,r,r,!1,r,r,!1,r,new L.ht("assets/images/splash_bg.jpg",r,r),!1,C.bk,r),r,r,r,q.a.b*0.8,r,new V.aR(25,0,25,0),p.a.a),T.fd(H.a([L.ky("A FUNERAL",r,r,r,A.hW(r,r,C.pe,r,r,r,r,r,r,r,r,48,r,r,r,r,!0,r,r,r,r,r,r),r)],s),C.a9,C.av,C.aj),T.fd(H.a([L.ky("welcome and click to join",r,r,r,A.hW(r,r,C.pe,r,r,r,r,r,r,r,r,36,r,r,r,r,!0,r,r,r,r,r,r),r)],s),C.a9,C.av,C.aj)],s),C.a9,C.av,C.aj),C.b7,!1,r,r,r,r,r,r,r,r,r,r,r,this.gRJ(),r,r,r,r,r,r)}}
+return D.rH(r,T.qN(H.a([M.d8(r,U.Xw(C.H,r,r,!1,r,r,!1,r,new L.ht("assets/images/splash_bg.jpg",r,r),!1,C.bk,r),r,r,r,q.a.b*0.8,r,new V.aR(25,0,25,0),p.a.a),T.fd(H.a([L.ky("A FUNERAL",r,r,r,A.hW(r,r,C.pe,r,r,r,r,r,r,r,r,48,r,r,r,r,!0,r,r,r,r,r,r),r)],s),C.a9,C.av,C.aj),T.fd(H.a([L.ky("welcome and click to join",r,r,r,A.hW(r,r,C.pe,r,r,r,r,r,r,r,r,14,r,r,r,r,!0,r,r,r,r,r,r),r)],s),C.a9,C.av,C.aj)],s),C.a9,C.av,C.aj),C.b7,!1,r,r,r,r,r,r,r,r,r,r,r,this.gRJ(),r,r,r,r,r,r)}}
 Z.abZ.prototype={
 $1:function(a){var s=t.ht
 return new Q.fB(H.a([],s),H.a([],s),new P.b0(t.V))},
@@ -66755,7 +66755,7 @@ return new K.MH(C.RD,p,o)})
 r($,"ayB","kZ",function(){return new K.a9b()})
 r($,"ayD","amB",function(){return new K.a99()})
 r($,"ayE","acS",function(){return new K.a9a()})
-r($,"ays","amx",function(){return P.cB(16667,0)})
+r($,"ays","amx",function(){return P.cB(16667,0,0)})
 r($,"axL","am4",function(){return M.arr(0.5,1.1,100)})
 r($,"axM","am5",function(){var p,o
 $.aY.toString

@@ -34,12 +34,22 @@ class ImageHelper {
     return "assets/images/3.0x/$url.$suffix";
   }
 
-  static Widget getNetworkImage(String url, String placeholderIcon, {double width, double height}){
+  static Widget getNetworkImage(String url, String placeholderIcon, {double width, double height, String suffix : 'png'}){
     return isBlank(url) ? getIconPng(placeholderIcon) : FadeInImage.assetNetwork(
       fit: BoxFit.fill,
       width: width,
       height: height,
-      placeholder: ImageHelper.getImageUrl(placeholderIcon, 'png'),
+      placeholder: ImageHelper.getImageUrl(placeholderIcon, suffix),
+      image: url ?? '',
+    );
+  }
+
+  static Widget getNetworkGif(String url, String placeholderIcon, {double width, double height}){
+    return isBlank(url) ? Image.asset(ImageHelper.getImageUrl(placeholderIcon, 'gif')) : FadeInImage.assetNetwork(
+      fit: BoxFit.fill,
+      width: width,
+      height: height,
+      placeholder: ImageHelper.getImageUrl(placeholderIcon, 'gif'),
       image: url ?? '',
     );
   }

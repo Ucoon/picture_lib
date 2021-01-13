@@ -27,7 +27,7 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
     }
     EasyLoading.show(status: "Loading...");
     _homeViewModel.getPictures().then((value) {
-      Future.delayed(Duration(seconds: 30), () {
+      Future.delayed(Duration(seconds: 3), () {
         _contentControl.clear();
         EasyLoading.dismiss();
       });
@@ -63,8 +63,7 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
             margin: EdgeInsets.only(left: 25, right: 25),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.41,
-            child:
-                Image.asset(ImageHelper.getImageUrl('home_banner_bg', 'gif')),
+            child: ImageHelper.getNetworkGif('http://ucoon.tech/PictureLib/home_banner_bg.gif', 'home_banner_bg'),
           ),
           Container(
             width: 700,
@@ -72,7 +71,7 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: ImageHelper.getImage('home_button_bg', 'png'),
+                image: NetworkImage('http://ucoon.tech/PictureLib/home_button_bg.png'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -100,8 +99,7 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
                   alignment: Alignment.topLeft,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    border:
-                        Border.all(color: MyColors.grey_border_color, width: 1),
+                    border: Border.all(color: MyColors.grey_border_color, width: 1),
                   ),
                   child: TextField(
                     controller: _contentControl,
@@ -127,8 +125,7 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      border: Border.all(
-                          color: MyColors.red_border_color, width: 1),
+                      border: Border.all(color: MyColors.red_border_color, width: 1),
                     ),
                     child: Text(
                       'GENERATE MONUMENT',
@@ -149,7 +146,7 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
           Container(
             width: 817,
             height: 1156,
-            child: ImageHelper.getIconPng('home_banner_bottom'),
+            child: ImageHelper.getNetworkImage('http://ucoon.tech/PictureLib/home_banner_bottom.png','home_banner_bottom'),
           ),
         ],
       ),
@@ -172,9 +169,7 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
                   return Container(
                     width: 200,
                     height: 206,
-                    child: ImageHelper.getNetworkImage(
-                        data.item2[index].imageUrl,
-                        'home_result_place_holder_icon'),
+                    child: ImageHelper.getNetworkImage(data.item2[index].imageUrl, 'home_result_place_holder_icon'),
                   );
                 },
               );
