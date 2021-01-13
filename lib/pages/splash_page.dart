@@ -52,7 +52,7 @@ class _SplashPageState extends BasePageStatefulWidgetState<SplashPage> {
               Text(
                 'welcome and click to join',
                 style: TextStyle(
-                  fontSize: 36,
+                  fontSize: 14,
                   color: Colors.red,
                 ),
               ),
