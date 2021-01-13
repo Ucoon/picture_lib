@@ -25,8 +25,9 @@ class _SplashPageState extends BasePageStatefulWidgetState<SplashPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            width: MediaQuery.of(context).size.width * 0.8,
-            height: MediaQuery.of(context).size.height * 0.68,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.8,
+            padding: EdgeInsets.only(left: 25, right: 25),
             child: ImageHelper.getIconJpg('splash_bg'),
           ),
           Row(
@@ -38,6 +39,20 @@ class _SplashPageState extends BasePageStatefulWidgetState<SplashPage> {
                 'A FUNERAL',
                 style: TextStyle(
                   fontSize: 48,
+                  color: Colors.red,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'welcome and click to join',
+                style: TextStyle(
+                  fontSize: 36,
                   color: Colors.red,
                 ),
               ),

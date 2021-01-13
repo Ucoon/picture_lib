@@ -54,6 +54,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Submit your name to get a \nmonument for yourself`
+  String get home_page_hint {
+    return Intl.message(
+      'Submit your name to get a \nmonument for yourself',
+      name: 'home_page_hint',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "appName" : MessageLookupByLibrary.simpleMessage("图库平台"),
+    "home_page_hint" : MessageLookupByLibrary.simpleMessage("Submit your name to get a \nmonument for yourself"),
     "submit_hint" : MessageLookupByLibrary.simpleMessage("SUBMIT")
   };
 }

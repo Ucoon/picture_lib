@@ -79,9 +79,24 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      S.of(context).home_page_hint,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.red,
+                      ),
+                    ),
+                  ],
+                ),
                 Container(
                   width: 200,
                   height: 29,
+                  margin: EdgeInsets.only(top: 30),
                   alignment: Alignment.topLeft,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -103,26 +118,6 @@ class _HomePageState extends BasePageStatefulWidgetState<HomePage> {
                     ),
                   ),
                 ),
-                // Container(
-                //   width: 200,
-                //   height: 29,
-                //   alignment: Alignment.topLeft,
-                //   margin: EdgeInsets.only(top: 21),
-                //   decoration: BoxDecoration(
-                //     color: Colors.white,
-                //     border: Border.all(color: MyColors.grey_border_color, width: 1),
-                //   ),
-                //   child: TextField(
-                //     decoration: InputDecoration(
-                //       hintText: 'SUBMIT TEXT',
-                //       hintStyle: TextStyle(
-                //         fontSize: 14,
-                //         color: MyColors.grey_font_color,
-                //       ),
-                //       border: InputBorder.none,
-                //     ),
-                //   ),
-                // ),
                 GestureDetector(
                   onTap: _getPictures,
                   child: Container(
